@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origa - Precisão em cada encaixe</title>
+    
+    <!-- Importação da Fonte Oficial Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Utilização do Tailwind CSS para estruturação rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        origa: {
+                            cyan: '#224949',   /* Ciano Escuro Oficial */
+                            yellow: '#e2b320', /* Amarelo Oficial */
+                            gray: '#989898',   /* Cinza Oficial */
+                            light: '#f9fafa'   /* Fundo Claro */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos adicionais para navegação suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-origa-light text-gray-800 font-sans antialiased">
+
+    <!-- Cabeçalho Fixo -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logótipo Atualizado com o ficheiro 3.png -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <!-- Certifica-te que o ficheiro 3.png está na mesma pasta que este HTML -->
+                    <img src="3.png" alt="Símbolo Origa" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/100x100/224949/e2b320?text=OR'">
+                    <span class="font-extrabold text-3xl tracking-widest text-origa-cyan uppercase mt-1">Origa</span>
+                </div>
+                
+                <!-- Navegação e Botão de Contacto -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-origa-cyan hover:text-origa-yellow font-semibold transition-colors">Início</a>
+                    <a href="#catalogo" class="text-origa-cyan hover:text-origa-yellow font-semibold transition-colors">Catálogo</a>
+                    <a href="#sobre" class="text-origa-cyan hover:text-origa-yellow font-semibold transition-colors">Logística</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <a href="#" class="border-2 border-origa-cyan text-origa-cyan hover:bg-origa-cyan hover:text-white px-6 py-2 rounded font-bold transition-all duration-300">
+                        Fale Connosco
+                    </a>
+                </div>
+                
+                <!-- Menu Mobile (Ícone Hambúrguer) -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-origa-cyan hover:text-origa-yellow focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Secção Hero (Banner Principal) -->
+    <section id="inicio" class="relative bg-origa-cyan text-white py-24 sm:py-32 lg:py-40">
+        <div class="absolute inset-0 overflow-hidden opacity-20">
+            <!-- Padrão de fundo opcional para dar textura industrial -->
+            <svg class="absolute h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+            </svg>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                Precisão em cada encaixe
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-200 mb-10">
+                Distribuição especializada de componentes, escovas de vedação e ferragens de alta performance para esquadrias.
+            </p>
+            <a href="#catalogo" class="inline-block bg-origa-yellow text-origa-cyan hover:bg-yellow-400 font-bold text-lg px-8 py-4 rounded-md shadow-lg transform transition hover:-translate-y-1">
+                Ver Catálogo de Produtos
+            </a>
+        </div>
+    </section>
+
+    <!-- Secção de Catálogo (Vitrine Mercado Livre) -->
+    <section id="catalogo" class="py-20 bg-origa-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-origa-cyan uppercase tracking-wide">Destaques no Mercado Livre</h2>
+                <div class="w-24 h-1 bg-origa-yellow mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-600">Compre com segurança através dos nossos anúncios oficiais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Produto 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/e2b320/224949?text=Escova+de+Vedacao" alt="Escova de Vedação" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-origa-cyan mb-2">Escova de Vedação 5x7</h3>
+                        <p class="text-gray-600 text-sm mb-6 h-10">Rolo com 50 metros. Ideal para vedação acústica e térmica em esquadrias de alumínio.</p>
+                        <a href="#" class="block w-full text-center bg-origa-yellow text-origa-cyan font-bold py-3 rounded hover:bg-yellow-400 transition-colors">
+                            Comprar no Mercado Livre
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/e2b320/224949?text=Fecho+Concha" alt="Fecho Concha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-origa-cyan mb-2">Fecho Concha com Mola</h3>
+                        <p class="text-gray-600 text-sm mb-6 h-10">Kit com 10 unidades. Acabamento premium e travamento seguro para portas de correr.</p>
+                        <a href="#" class="block w-full text-center bg-origa-yellow text-origa-cyan font-bold py-3 rounded hover:bg-yellow-400 transition-colors">
+                            Comprar no Mercado Livre
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/e2b320/224949?text=Roldana+Dupla" alt="Roldana Dupla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-origa-cyan mb-2">Roldana Dupla c/ Regulagem</h3>
+                        <p class="text-gray-600 text-sm mb-6 h-10">Caixa com 20 peças. Rolamento blindado que suporta até 80kg por folha.</p>
+                        <a href="#" class="block w-full text-center bg-origa-yellow text-origa-cyan font-bold py-3 rounded hover:bg-yellow-400 transition-colors">
+                            Comprar no Mercado Livre
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Logística / Sobre -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://placehold.co/800x600/f4f4f4/224949?text=Estoque+Origa+Botucatu" alt="Logística Origa" class="rounded-lg shadow-lg">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-extrabold text-origa-cyan mb-6">Operação Logística Estratégica</h2>
+                <p class="text-gray-600 mb-4 text-lg">
+                    Baseados em Botucatu-SP, contamos com uma estrutura preparada para despachar os seus pedidos com a máxima agilidade.
+                </p>
+                <p class="text-gray-600 mb-6 text-lg">
+                    O nosso processo de separação e embalamento garante que o material chegue em perfeitas condições à sua obra ou marcenaria, com a qualidade exigida no padrão <strong>Mercado Livre</strong>.
+                </p>
+                <div class="flex items-center gap-4 text-origa-cyan font-bold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                    <span>Envio rápido e seguro para todo o Brasil.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-origa-cyan text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <!-- Uso dinâmico do logo branco usando filtros CSS do Tailwind -->
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="3.png" alt="Símbolo Origa Branco" class="h-8 w-auto object-contain brightness-0 invert" onerror="this.style.display='none'">
+                    <span class="font-extrabold text-2xl tracking-widest text-white uppercase mt-1">Origa</span>
+                </div>
+                <p class="text-sm text-gray-300">Precisão em cada encaixe.</p>
+                <p class="text-sm text-gray-300 mt-2">Botucatu, SP - Brasil</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-origa-yellow uppercase">Atendimento</h4>
+                <p class="text-sm text-gray-300">Segunda a Sexta: 08h às 18h</p>
+                <p class="text-sm text-gray-300 mt-2">E-mail: contacto@origa.com.br</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-origa-yellow uppercase">Links Úteis</h4>
+                <ul class="text-sm text-gray-300 space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">Termos e Condições</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Política de Privacidade</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-600 text-center text-sm text-gray-400">
+            &copy; 2026 Origa. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
