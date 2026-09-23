@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Origa - Em Breve</title>
     
+    <!-- ========================================== -->
+    <!-- INÍCIO: TAGS PARA O PREVIEW DO WHATSAPP    -->
+    <!-- Isso cria aquela caixinha bonita quando você manda o link do site no Zap -->
+    <!-- ========================================== -->
+    <meta property="og:title" content="Origa - Precisão em cada encaixe">
+    <meta property="og:description" content="Distribuição especializada de ferragens, componentes e escovas de vedação. Conheça nossas ofertas no Mercado Livre.">
+    <meta property="og:image" content="2.png">
+    <meta property="og:url" content="https://origa.com.br">
+    <meta property="og:type" content="website">
+    
     <!-- Importação da Fonte Oficial Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +44,7 @@
 </head>
 <body class="bg-gray-200 text-gray-800 font-sans antialiased min-h-screen flex flex-col items-center relative overflow-x-hidden py-12">
 
-    <!-- Elementos visuais de fundo para não deixar a tela "vazia" -->
+    <!-- Elementos visuais de fundo -->
     <div class="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
         <svg class="absolute h-full w-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
             <defs>
@@ -46,56 +56,48 @@
         </svg>
     </div>
 
-    <!-- Card Central -->
     <main class="relative z-10 max-w-4xl w-full mx-auto px-6 text-center py-10">
         
-        <!-- Logotipo Origa -->
-        <div class="flex justify-center items-center mb-8">
-            <img src="2.png" alt="Logotipo Origa Completo" class="h-40 sm:h-48 md:h-56 w-auto object-contain" onerror="this.src='https://placehold.co/300x100/224949/e2b320?text=ORIGA'">
+        <!-- Logotipo Origa (Usando o 2.png em escala maior) -->
+        <div class="flex justify-center items-center mb-12">
+            <img src="2.png" alt="Logotipo Origa" class="h-40 sm:h-48 md:h-56 w-auto object-contain" onerror="this.src='https://placehold.co/400x150/224949/e2b320?text=ORIGA'">
         </div>
 
-        <!-- Mensagem de Manutenção -->
         <h1 class="text-3xl md:text-4xl font-extrabold text-origa-cyan mb-4">
             Estamos preparando novidades!
         </h1>
-        <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
-            O nosso novo site oficial está em desenvolvimento para lhe oferecer a melhor experiência em ferragens, componentes e escovas de vedação.
+        <p class="text-lg text-gray-600 mb-10 max-w-lg mx-auto">
+            O nosso novo site oficial está em desenvolvimento. Enquanto isso, aproveite as nossas condições especiais através da nossa loja no Mercado Livre.
         </p>
 
         <!-- ========================================== -->
         <!-- INÍCIO DO PAINEL DE OFERTA DA SEMANA       -->
-        <!-- Área projetada com comentários para facilitar a edição -->
         <!-- ========================================== -->
         <div class="mb-10 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-300 text-left flex flex-col md:flex-row relative transform transition-all duration-300 hover:shadow-2xl max-w-4xl mx-auto">
             
-            <!-- Etiqueta de Destaque -->
             <div class="absolute top-0 left-0 bg-origa-yellow text-origa-cyan font-extrabold text-xs uppercase px-4 py-1.5 rounded-br-lg z-10 shadow-sm tracking-wider">
                 Oferta da Semana
             </div>
             
-            <!-- 1. IMAGEM DO PRODUTO (Substitua o link dentro do src="") -->
+            <!-- Caixa da Imagem (Tamanho Fixo e Controlado) -->
             <div class="w-full md:w-2/5 bg-white flex items-center justify-center p-4 border-b md:border-b-0 md:border-r border-gray-200">
                 <div class="h-48 w-full flex items-center justify-center">
-                    <img src=https://http2.mlstatic.com/D_NQ_NP_2X_871507-MLA115194529094_082026-F.webp>
+                    <img id="oferta-imagem" src="https://http2.mlstatic.com/D_NQ_NP_667232-MLU74501258673_022024-O.webp" alt="Produto em Oferta" class="max-h-full max-w-full object-contain drop-shadow-md">
                 </div>
             </div>
             
+            <!-- Dados que serão preenchidos pelo robô JS -->
             <div class="w-full md:w-3/5 p-6 flex flex-col justify-center">
-                <!-- 2. NOME DO PRODUTO -->
-                <h3 class="text-2xl font-bold text-origa-cyan mb-2 leading-tight">Silicone Neutro Branco Vedação Dx-Max 700 280ml</h3>
+                <h3 id="oferta-titulo" class="text-2xl font-bold text-origa-cyan mb-2 leading-tight">Buscando oferta...</h3>
                 
-                <!-- 3. DESCRIÇÃO CURTA DO PRODUTO -->
-                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Vedante monocomponente de cura neutra ideal para a construção civil. Alta durabilidade, antifungo e excelente adesão em esquadrias e vidros.</p>
+                <p id="oferta-descricao" class="text-sm text-gray-500 mb-4 line-clamp-2">Carregando detalhes direto do Mercado Livre para você.</p>
                 
                 <div class="flex items-end gap-3 mb-5">
-                    <!-- 4. PREÇO ANTIGO (Aquele que fica riscado) -->
-                    <span class="text-sm text-gray-400 line-through mb-1">R$ 54,90</span>
-                    <!-- 5. PREÇO NOVO (Preço da Oferta) -->
-                    <span class="text-3xl font-extrabold text-origa-cyan">R$ 24,70</span>
+                    <span id="oferta-preco-antigo" class="text-sm text-gray-400 line-through mb-1 hidden"></span>
+                    <span id="oferta-preco-novo" class="text-3xl font-extrabold text-origa-cyan">...</span>
                 </div>
                 
-                <!-- 6. LINK DO ANÚNCIO NO ML (Substitua o link dentro do href="") -->
-                <a href="https://www.mercadolivre.com.br/silicone-neutro-branco-vedacao-construcao-dx-max-700-280ml/p/MLB2097538865?pdp_filters=seller_id%3A3631128401&quantity=3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-cyan text-white hover:bg-teal-900 font-bold text-sm px-6 py-3 rounded-lg shadow-md transition-colors w-full sm:w-auto gap-2">
+                <a id="oferta-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-cyan text-white hover:bg-teal-900 font-bold text-sm px-6 py-3 rounded-lg shadow-md transition-colors w-full sm:w-auto gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
                     </svg>
@@ -107,8 +109,8 @@
         <!-- FIM DO PAINEL DE OFERTA DA SEMANA          -->
         <!-- ========================================== -->
 
-        <!-- 7. BOTÃO GERAL DA LOJA (Leva para todos os seus produtos) -->
-        <a href="COLOQUE_SEU_LINK_DO_MERCADO_LIVRE_GERAL_AQUI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-yellow text-origa-cyan hover:bg-yellow-400 font-bold text-lg px-8 py-4 rounded-md shadow-lg transform transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto gap-3">
+        <!-- BOTÃO GERAL DA LOJA -->
+        <a href=https://lista.mercadolivre.com.br/_CustId_3631128401 target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-yellow text-origa-cyan hover:bg-yellow-400 font-bold text-lg px-8 py-4 rounded-md shadow-lg transform transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
                 <path d="M136,120v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm-32,0v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm125.13-17.44-15.65,93.9A16,16,0,0,1,197.69,208H58.31a16,16,0,0,1-15.79-11.54L26.87,102.56A16,16,0,0,1,34.42,85.25L75.64,52.26A16,16,0,0,1,85.63,48H170.37a16,16,0,0,1,10,4.26l41.22,33A16,16,0,0,1,229.13,102.56ZM170.37,64H85.63L47.78,94.28,63.15,186.5A16.07,16.07,0,0,1,64,192H192a16.07,16.07,0,0,1,.85-5.5l15.37-92.22Z"></path>
             </svg>
@@ -116,5 +118,63 @@
         </a>
     </main>
 
+    <!-- SCRIPT DE AUTOMAÇÃO (PREVIEW DO LINK) -->
+    <script>
+        // =========================================================
+        // COLE O SEU LINK DA OFERTA DO MERCADO LIVRE AQUI NAS ASPAS:
+        // =========================================================
+        const LINK_OFERTA_DA_SEMANA = https://www.mercadolivre.com.br/silicone-neutro-branco-vedacao-construcao-dx-max-700-280ml/p/MLB2097538865?pdp_filters=seller_id%3A3631128401&quantity=3;
+        
+        async function buscarDadosMercadoLivre() {
+            try {
+                // Configura o botão imediatamente com o link
+                document.getElementById('oferta-link').href = LINK_OFERTA_DA_SEMANA;
+                
+                // Extrai o código "MLB..." do link que você colar
+                const mlbMatch = LINK_OFERTA_DA_SEMANA.match(/MLB-?\d+/i);
+                
+                if (mlbMatch) {
+                    // Limpa o código para ficar no padrão da API (ex: MLB2097538865)
+                    const codigoDoProduto = mlbMatch[0].replace('-', '');
+                    
+                    // O "robô" indo buscar os dados na API pública do ML
+                    const resposta = await fetch(`https://api.mercadolibre.com/items/${codigoDoProduto}`);
+                    const dados = await resposta.json();
+                    
+                    if (dados && dados.title) {
+                        // Preenche o Titulo
+                        document.getElementById('oferta-titulo').innerText = dados.title;
+                        
+                        // Atualiza a descrição curta para mostrar o que é e dar segurança
+                        document.getElementById('oferta-descricao').innerText = "Oferta selecionada diretamente da nossa loja oficial no Mercado Livre. Compra garantida.";
+                        
+                        // Preenche os Preços
+                        const precoFormatado = (dados.price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                        document.getElementById('oferta-preco-novo').innerText = precoFormatado;
+                        
+                        if (dados.original_price && dados.original_price > dados.price) {
+                            const precoAntigoFormatado = (dados.original_price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                            document.getElementById('oferta-preco-antigo').innerText = precoAntigoFormatado;
+                            document.getElementById('oferta-preco-antigo').style.display = 'inline-block';
+                        }
+                        
+                        // Preenche a Imagem
+                        if (dados.pictures && dados.pictures.length > 0) {
+                            document.getElementById('oferta-imagem').src = dados.pictures[0].secure_url;
+                        }
+                    }
+                }
+            } catch (error) {
+                console.log("Falha ao buscar dados ao vivo do ML. Verifique se o ID do produto não é de catálogo (/p/).");
+                // Caso seja um link de catálogo fechado, caímos para um "Plano B" preenchido manualmente
+                document.getElementById('oferta-titulo').innerText = "Kit 3x Silicone Neutro Branco Vedação Dx-Max 700";
+                document.getElementById('oferta-descricao').innerText = "Vedante monocomponente de cura neutra ideal para a construção civil. Alta durabilidade e excelente adesão.";
+                document.getElementById('oferta-preco-novo').innerText = "R$ 82,35";
+            }
+        }
+        
+        // Aciona o robô assim que o site carrega
+        buscarDadosMercadoLivre();
+    </script>
 </body>
 </html>
