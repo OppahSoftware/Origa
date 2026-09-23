@@ -118,7 +118,8 @@
         </a>
     </main>
 
-    <!-- SCRIPT DE AUTOMAÇÃO (PREVIEW DO LINK) -->
+    <!-- ... existing code ... -->
+    <!-- SCRIPT DE AUTOMAÇÃO (ROBÔ ML INTELIGENTE) -->
     <script>
         // =========================================================
         // COLE O SEU LINK DA OFERTA DO MERCADO LIVRE AQUI NAS ASPAS:
@@ -126,7 +127,7 @@
         const LINK_OFERTA_DA_SEMANA = "https://www.mercadolivre.com.br/silicone-neutro-branco-vedacao-construcao-dx-max-700-280ml/p/MLB2097538865?pdp_filters=seller_id%3A3631128401&quantity=3";
         
         async function buscarDadosMercadoLivre() {
-            // Função interna do PLANO B (Caso a API do ML bloqueie a leitura)
+            // Função interna do PLANO B (Caso a internet caia ou falte algum dado)
             const ativarPlanoB = () => {
                 document.getElementById('oferta-titulo').innerText = "Kit 3x Silicone Neutro Branco Vedação Dx-Max 700";
                 document.getElementById('oferta-descricao').innerText = "Vedante monocomponente de cura neutra ideal para a construção civil. Alta durabilidade e excelente adesão.";
@@ -135,55 +136,70 @@
             };
 
             try {
-                // Configura o botão imediatamente com o link
+                // 1. Já configura o botão com o link oficial
                 document.getElementById('oferta-link').href = LINK_OFERTA_DA_SEMANA;
                 
-                // Extrai o código "MLB..." do link que você colar
-                const mlbMatch = LINK_OFERTA_DA_SEMANA.match(/MLB-?\d+/i);
+                let codigoDoProduto = '';
+                let urlDaApi = '';
+
+                // 2. Inteligência: O link é de Catálogo (/p/) ou Comum (/MLB-)?
+                if (LINK_OFERTA_DA_SEMANA.includes('/p/MLB')) {
+                    // É Catálogo! Extrai o ID e usa a porta de Produtos
+                    const matchCatalogo = LINK_OFERTA_DA_SEMANA.match(/MLB\d+/i);
+                    if (matchCatalogo) {
+                        codigoDoProduto = matchCatalogo[0];
+                        urlDaApi = `https://api.mercadolibre.com/products/${codigoDoProduto}`;
+                    }
+                } else {
+                    // É Comum! Extrai o ID e usa a porta de Itens
+                    const matchComum = LINK_OFERTA_DA_SEMANA.match(/MLB-?\d+/i);
+                    if (matchComum) {
+                        codigoDoProduto = matchComum[0].replace('-', '');
+                        urlDaApi = `https://api.mercadolibre.com/items/${codigoDoProduto}`;
+                    }
+                }
                 
-                if (mlbMatch) {
-                    const codigoDoProduto = mlbMatch[0].replace('-', '');
+                // 3. Se achou um código válido, vai buscar!
+                if (urlDaApi !== '') {
+                    const resposta = await fetch(urlDaApi);
                     
-                    // O "robô" indo buscar os dados
-                    const resposta = await fetch(`https://api.mercadolibre.com/items/${codigoDoProduto}`);
-                    
-                    // SE O MERCADO LIVRE BLOQUEAR (Erro 404 de Catálogo, etc), FORÇA O PLANO B!
                     if (!resposta.ok) {
-                        throw new Error("Mercado Livre bloqueou a leitura (Produto de Catálogo).");
+                        throw new Error(`O Mercado Livre negou acesso à porta: ${urlDaApi}`);
                     }
 
                     const dados = await resposta.json();
                     
-                    if (dados && dados.title) {
-                        // Preenche os dados com sucesso
-                        document.getElementById('oferta-titulo').innerText = dados.title;
+                    // 4. Preenche os dados misturando o formato de Itens e Produtos
+                    const titulo = dados.title || dados.name; // Itens usam 'title', Produtos usam 'name'
+                    
+                    if (titulo) {
+                        document.getElementById('oferta-titulo').innerText = titulo;
                         document.getElementById('oferta-descricao').innerText = "Oferta selecionada diretamente da nossa loja oficial no Mercado Livre. Compra garantida.";
                         
-                        const precoFormatado = (dados.price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
-                        document.getElementById('oferta-preco-novo').innerText = precoFormatado;
-                        
-                        if (dados.original_price && dados.original_price > dados.price) {
-                            const precoAntigoFormatado = (dados.original_price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
-                            document.getElementById('oferta-preco-antigo').innerText = precoAntigoFormatado;
-                            document.getElementById('oferta-preco-antigo').style.display = 'inline-block';
+                        // Busca o preço (Itens usam 'price', Produtos usam 'buy_box_winner.price')
+                        const preco = dados.price || (dados.buy_box_winner && dados.buy_box_winner.price) || null;
+                        if (preco) {
+                            document.getElementById('oferta-preco-novo').innerText = preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                        } else {
+                            document.getElementById('oferta-preco-novo').innerText = "Ver no ML"; // Se não achar preço, avisa
                         }
                         
+                        // Busca a foto
                         if (dados.pictures && dados.pictures.length > 0) {
-                            document.getElementById('oferta-imagem').src = dados.pictures[0].secure_url;
+                            document.getElementById('oferta-imagem').src = dados.pictures[0].secure_url || dados.pictures[0].url;
                         }
                     } else {
-                        throw new Error("Dados da API vieram vazios.");
+                        throw new Error("O Mercado Livre retornou dados vazios.");
                     }
                 } else {
-                    throw new Error("Link inválido.");
+                    throw new Error("Não consegui ler o código MLB no link colado.");
                 }
             } catch (error) {
-                console.log("Ativando Plano B de segurança. Motivo:", error.message);
+                console.warn("Robô encontrou um obstáculo, ativando Plano B de segurança:", error.message);
                 ativarPlanoB();
             }
         }
         
-        // Aciona o robô assim que o site carrega
         buscarDadosMercadoLivre();
     </script>
 </body>
