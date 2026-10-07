@@ -56,7 +56,7 @@
         </svg>
     </div>
 
-    <main class="relative z-10 max-w-4xl w-full mx-auto px-6 text-center py-10">
+    <main class="relative z-10 max-w-4xl w-full mx-auto px-6 text-center py-10 flex-grow flex flex-col justify-center">
         
         <!-- Logotipo Origa (Usando o 2.png em escala maior) -->
         <div class="flex justify-center items-center mb-12">
@@ -73,7 +73,7 @@
         <!-- ========================================== -->
         <!-- INÍCIO DO PAINEL DE OFERTA DA SEMANA       -->
         <!-- ========================================== -->
-        <div class="mb-10 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-300 text-left flex flex-col md:flex-row relative transform transition-all duration-300 hover:shadow-2xl max-w-4xl mx-auto">
+        <div class="mb-10 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-300 text-left flex flex-col md:flex-row relative transform transition-all duration-300 hover:shadow-2xl max-w-4xl mx-auto w-full">
             
             <div class="absolute top-0 left-0 bg-origa-yellow text-origa-cyan font-extrabold text-xs uppercase px-4 py-1.5 rounded-br-lg z-10 shadow-sm tracking-wider">
                 Oferta da Semana
@@ -109,16 +109,37 @@
         <!-- FIM DO PAINEL DE OFERTA DA SEMANA          -->
         <!-- ========================================== -->
 
-        <!-- BOTÃO GERAL DA LOJA -->
-        <a href=https://lista.mercadolivre.com.br/_CustId_3631128401 target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-yellow text-origa-cyan hover:bg-yellow-400 font-bold text-lg px-8 py-4 rounded-md shadow-lg transform transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M136,120v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm-32,0v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm125.13-17.44-15.65,93.9A16,16,0,0,1,197.69,208H58.31a16,16,0,0,1-15.79-11.54L26.87,102.56A16,16,0,0,1,34.42,85.25L75.64,52.26A16,16,0,0,1,85.63,48H170.37a16,16,0,0,1,10,4.26l41.22,33A16,16,0,0,1,229.13,102.56ZM170.37,64H85.63L47.78,94.28,63.15,186.5A16.07,16.07,0,0,1,64,192H192a16.07,16.07,0,0,1,.85-5.5l15.37-92.22Z"></path>
-            </svg>
-            Ver Todos os Produtos
-        </a>
+        <!-- BOTÕES GERAIS E CONTATO -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
+            <!-- Botão da Loja ML -->
+            <a href="https://lista.mercadolivre.com.br/_CustId_3631128401" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-origa-yellow text-origa-cyan hover:bg-yellow-400 font-bold text-lg px-8 py-4 rounded-md shadow-lg transform transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M136,120v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm-32,0v64a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm125.13-17.44-15.65,93.9A16,16,0,0,1,197.69,208H58.31a16,16,0,0,1-15.79-11.54L26.87,102.56A16,16,0,0,1,34.42,85.25L75.64,52.26A16,16,0,0,1,85.63,48H170.37a16,16,0,0,1,10,4.26l41.22,33A16,16,0,0,1,229.13,102.56ZM170.37,64H85.63L47.78,94.28,63.15,186.5A16.07,16.07,0,0,1,64,192H192a16.07,16.07,0,0,1,.85-5.5l15.37-92.22Z"></path>
+                </svg>
+                Ver Todos os Produtos
+            </a>
+            
+            <!-- Botão Fale Conosco (WhatsApp) no fluxo principal -->
+            <a href="https://wa.me/5514998068107?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Origa." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border-2 border-origa-cyan text-origa-cyan hover:bg-origa-cyan hover:text-white font-bold text-lg px-8 py-4 rounded-md shadow-sm transition-all duration-300 w-full sm:w-auto gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
+                Fale Conosco
+            </a>
+        </div>
     </main>
 
-    <!-- ... existing code ... -->
+    <!-- Botão Flutuante do WhatsApp (Fica sempre visível no canto) -->
+    <a href="https://wa.me/5514998068107?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Origa." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:bg-[#20b858] transition-transform duration-300 flex items-center justify-center"
+       aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
+
     <!-- SCRIPT DE AUTOMAÇÃO (ROBÔ ML INTELIGENTE) -->
     <script>
         // =========================================================
@@ -132,7 +153,7 @@
                 document.getElementById('oferta-titulo').innerText = "Kit 3x Silicone Neutro Branco Vedação Dx-Max 700";
                 document.getElementById('oferta-descricao').innerText = "Vedante monocomponente de cura neutra ideal para a construção civil. Alta durabilidade e excelente adesão.";
                 document.getElementById('oferta-preco-novo').innerText = "R$ 24,70";
-                document.getElementById('oferta-imagem').src = https://http2.mlstatic.com/D_NQ_NP_2X_871507-MLA115194529094_082026-F.webp;
+                document.getElementById('oferta-imagem').src = "https://http2.mlstatic.com/D_NQ_NP_2X_871507-MLA115194529094_082026-F.webp";
             };
 
             try {
